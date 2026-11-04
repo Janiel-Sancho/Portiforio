@@ -1,0 +1,84 @@
+:root {
+    --cor-principal: #245c4b;
+    --cor-fundo: #f7f8f4;
+    --cor-texto: #26332e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font: 1rem/1.6 Arial, sans-serif;
+}
+
+main { flex: 1; }
+a { color: var(--cor-principal); }
+a:focus-visible { outline: 2px solid var(--cor-principal); }
+
+.largura-pagina,
+.largura-pagina-menu,
+.apresentacao-inicial,
+.rodape {
+    width: min(1000px, calc(100% - 32px));
+    margin-inline: auto;
+}
+
+header, footer { background: #eaf0e8; }
+header { border-bottom: 1px solid #ddd; }
+
+.largura-pagina-menu,
+.largura-pagina-menu ul,
+.lista-habilidades,
+.rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.largura-pagina-menu { min-height: 64px; }
+.largura-pagina-menu ul, .lista-habilidades { flex-wrap: wrap; margin: 0; padding: 0; list-style: none; }
+.nome-portifolio { font-size: 1.2rem; font-weight: bold; text-decoration: none; }
+.largura-pagina-menu a { text-decoration: none; }
+
+.apresentacao-inicial {
+    display: grid;
+    min-height: 340px;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+    gap: 24px;
+    padding-block: 40px;
+    animation: aparecer 0.5s ease-out;
+}
+
+.apresentacao-inicial h1, h2 { color: var(--cor-principal); }
+.titulo-profissional { color: var(--cor-principal); font-weight: bold; }
+.foto-perfil { width: min(100%, 280px); justify-self: center; }
+.secao-com-fundo,
+.fundo { padding-block: 32px; background: #eaf0e8; }
+.secao-com-espacamento { padding-block: 40px; }
+.lista-habilidades { justify-content: flex-start; }
+
+.rodape {
+    min-height: 60px;
+    justify-content: center;
+    text-align: center;
+}
+
+.rodape p { margin: 0; }
+
+@keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 650px) {
+    .largura-pagina-menu { align-items: flex-start; flex-direction: column; padding-block: 12px; }
+    .apresentacao-inicial { grid-template-columns: 1fr; }
+    .foto-perfil { width: min(70%, 240px); }
+}
