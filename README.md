@@ -25,5 +25,3 @@ Arquivos
 Site publicado
 https://github.com/Janiel-Sancho/Portiforio
 
-Vídeo de apresentação
- [adicione o link aqui]
